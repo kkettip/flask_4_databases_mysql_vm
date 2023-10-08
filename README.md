@@ -1,6 +1,6 @@
 # flask_4_databases_mysql_vm
 
-###.env file includes the following:###
+####**.env file includes the following:**
 
 DB_HOST = os.getenv("DB_HOST")
 DB_DATABASE = os.getenv("DB_DATABASE")
@@ -10,7 +10,7 @@ DB_PORT = int(os.getenv("DB_PORT", 3306))
 DB_CHARSET = os.getenv("DB_CHARSET", "utf8mb4")
 
 #### **MySQL Setup on Azure VM**
-Steps:
+**Steps:**
 1. Login into Azure
 2. Select: Virtual Machines 
 3. Select: Create 
