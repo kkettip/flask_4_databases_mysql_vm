@@ -1,6 +1,6 @@
 # flask_4_databases_mysql_vm
 
-####**.env file includes the following:**
+**.env file includes the following:**
 
 DB_HOST = os.getenv("DB_HOST")
 DB_DATABASE = os.getenv("DB_DATABASE")
