@@ -32,16 +32,16 @@ db_engine = create_engine(conn_string, echo=False)
 
 @app.route('/')
 def index():
-    query_patients = "SELECT * FROM patients"
+    query_patients = "SELECT * FROM patients limit 10"
     df_patients = read_sql(query_patients, db_engine)
     patients = df_patients.to_dict(orient='records')
    
 
-    query_conditions = "SELECT * FROM conditions"
+    query_conditions = "SELECT * FROM conditions limit 10"
     df_conditions = read_sql(query_conditions, db_engine)
     conditions = df_conditions.to_dict(orient='records')
 
-    query_patient_conditions = "SELECT * FROM patient_conditions"
+    query_patient_conditions = "SELECT * FROM patient_conditions limit 10"
     df_patient_conditions= read_sql(query_patient_conditions, db_engine)
     patient_conditions = df_patient_conditions.to_dict(orient='records')
     
