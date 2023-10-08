@@ -58,5 +58,15 @@ In Cloud Shell
 9. To edit the MySQL configuration fileInput and change the bind-address to 0.0.0.0. 
 10. Input: `sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf` 
 11. Save the file and exit.
-12. To restart: Input: `sudo service mysql restart` 
+12. To restart: Input: `sudo service mysql restart`
+
+**Connect MySQL Workbench to VM**
+
+In MySQL Workbench 
+1. Select: `+` at home screen to create a new MySQL connection 
+2. Setup Connection name
+3. Input:  VM's Hostname: public IP address, username and password
+4. Select: Test Connection
+5. Select: OK
+
 
