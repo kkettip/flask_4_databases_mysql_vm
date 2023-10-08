@@ -17,7 +17,10 @@
 
 
 #### **MySQL Setup on Azure VM**
-**Steps:**
+
+**Create Azure Virtual Machine (VM)**
+
+Steps:
 1. Login into Azure
 2. Select: Virtual Machines 
 3. Select: Create 
@@ -40,3 +43,20 @@
 Select Action: Allow
 20. Name port or use default name
 21. Select  Add
+
+**Connect Cloud Shell environment to VM** 
+
+In Cloud Shell
+1. Input VM information: `ssh <username>@<public-ip-address>` 
+2. Input VM password 
+3. Input `sudo apt-get update to update` the UBUNTU (OS) SERVER 
+4. Input `sudo apt-get install mysql-server mysql-client` to install MySQL server and client 
+5. Input Y 
+6. Input `sudo mysql` to log into MySQL
+7. To create a new user and grant privileges to the user: Input `CREATE USER ‘user'@'%' IDENTIFIED BY ‘password’;` and `GRANT ALL PRIVILEGES ON *.* TO ‘user'@'%’ WITH GRANT OPTION;`
+8. Exit MySQL.
+9. To edit the MySQL configuration fileInput and change the bind-address to 0.0.0.0. 
+10. Input: `sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf` 
+11. Save the file and exit.
+12. To restart: Input: `sudo service mysql restart` 
+
