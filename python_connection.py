@@ -3,28 +3,7 @@ from dotenv import load_dotenv
 from pandas import read_sql
 from sqlalchemy import create_engine, inspect
 
-"""
 
-This script uses the pymysql library for connecting to MySQL, 
-so you might need to install that (pip install pymysql) if you haven't already.
-
-It also uses python-dotenv for bringing in secrets from your .env file 
-
-The .env should have the following in it:
-
-DB_HOST=your_host
-DB_DATABASE=your_database_name
-DB_USERNAME=your_username
-DB_PASSWORD=your_password
-DB_PORT=3306
-DB_CHARSET=utf8mb4
-
-The default port is set to 3306 for MySQL, but you can override it by 
-modifying the DB_PORT in your .env file.
-
-The connection string is MySQL-specific, incorporating the specified port and charset.
-
-"""
 
 load_dotenv()  # Load environment variables from .env file
 
@@ -56,20 +35,21 @@ def execute_query_to_dataframe(query: str, engine):
     return read_sql(query, engine)
 
 
-# Example usage
+#get tables
 tables = get_tables(db_engine)
 print("Tables in the database:", tables)
 
-sql_query_patients = "SELECT * FROM patients"  # Modify as per your table
+
+sql_query_patients = "SELECT * FROM patients"  
 df_patients = execute_query_to_dataframe(sql_query_patients, db_engine)
 print(df_patients)
 
 
-sql_query_conditions = "SELECT * FROM conditions"  # Modify as per your table
+sql_query_conditions = "SELECT * FROM conditions" 
 df_conditions = execute_query_to_dataframe(sql_query_conditions, db_engine)
 print(df_conditions)
 
 
-sql_query_patient_conditions = "SELECT * FROM patient_conditions"  # Modify as per your table
+sql_query_patient_conditions = "SELECT * FROM patient_conditions"  
 df_patient_conditions = execute_query_to_dataframe(sql_query_patient_conditions, db_engine)
 print(df_patient_conditions)
