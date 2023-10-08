@@ -2,12 +2,19 @@
 
 **.env file includes the following:**
 
-DB_HOST = os.getenv("DB_HOST")
-DB_DATABASE = os.getenv("DB_DATABASE")
-DB_USERNAME = os.getenv("DB_USERNAME")
-DB_PASSWORD = os.getenv("DB_PASSWORD")
-DB_PORT = int(os.getenv("DB_PORT", 3306))
-DB_CHARSET = os.getenv("DB_CHARSET", "utf8mb4")
+`DB_HOST=your_host`
+
+`DB_DATABASE=your_database_name`
+
+`DB_USERNAME=your_username`
+
+`DB_PASSWORD=your_password`
+
+`DB_PORT=3306`
+
+`DB_CHARSET=utf8mb4`
+
+
 
 #### **MySQL Setup on Azure VM**
 **Steps:**
