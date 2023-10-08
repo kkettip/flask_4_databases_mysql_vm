@@ -40,9 +40,9 @@ Steps:
 17. Select: Add inbound port rule 
 18. Select: Service: MySQL port 3306 is automatically populated
 19. Select:Source, source port ranges, destination, protocol, priority or leave at default settings
-Select Action: Allow
-20. Name port or use default name
-21. Select  Add
+20. Select Action: Allow
+21. Name port or use default name
+22. Select  Add
 
 **Connect Cloud Shell environment to VM** 
 
@@ -69,4 +69,8 @@ In MySQL Workbench
 4. Select: Test Connection
 5. Select: OK
 
+**Database Schema**
+
+Database name: all_patients
+Tables: patients, conditions and patients_conditions
 
