@@ -55,8 +55,8 @@ In Cloud Shell
 6. Input `sudo mysql` to log into MySQL
 7. To create a new user and grant privileges to the user: Input `CREATE USER ‘user'@'%' IDENTIFIED BY ‘password’;` and `GRANT ALL PRIVILEGES ON *.* TO ‘user'@'%’ WITH GRANT OPTION;`
 8. Exit MySQL.
-9. To edit the MySQL configuration fileInput and change the bind-address to 0.0.0.0. 
-10. Input: `sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf` 
+9. To edit the MySQL configuration file and change the bind-address to 0.0.0.0. 
+10. Input: `sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf` and change the bind-address to 0.0.0.0.
 11. Save the file and exit.
 12. To restart: Input: `sudo service mysql restart`
 
@@ -72,5 +72,44 @@ In MySQL Workbench
 **Database Schema**
 
 Database name: all_patients
+
 Tables: patients, conditions and patients_conditions
+
+The relationship type is many to many because one patient can be associated with many types of conditions. The junction table is `conditions` table. The junction table has a one to many relationship with the `patients` table and a one to many realtionship with the `patients_conditions` table.
+
+**Steps and challenges**
+
+To connect with Flask 
+
+1. Import the following libaries: 
+
+`from flask import Flask, render_template`
+
+`from pandas import read_sql`
+
+`import pandas as pd`
+
+`import os`
+
+`from dotenv import load_dotenv`
+
+`from sqlalchemy import create_engine, inspect`
+
+`import sqlalchemy`
+
+2. Connect to mysql database with `conn_string = (
+    f"mysql+pymysql://{DB_USERNAME}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_DATABASE}"
+    f"?charset={DB_CHARSET}")`
+
+3. Create database engine with `db_engine = create_engine(conn_string, echo=False)`
+
+Errors
+
+1. Error enountered include: ObjectNotExecutableError: Not an executable object: "INSERT INTO patients (first_name, last_name, date_of_birth) VALUES ('Susan', 'Romero', '1934-06-16')"
+
+Error was resolved with the solution found from stack overflow to downgrade sqlalchemy by `pip install sqlalchemy==1.4.46`
+
+2. Typo in port number prevented connection with Flask. Inputting correct port number resolved the issue.
+
+
 
