@@ -105,7 +105,7 @@ To connect with Flask
 
 Errors
 
-1. Error enountered include: ObjectNotExecutableError: Not an executable object: "INSERT INTO patients (first_name, last_name, date_of_birth) VALUES ('Susan', 'Romero', '1934-06-16')"
+1. Error enountered prevented insertion of fake data into table with the error message: ObjectNotExecutableError: Not an executable object: "INSERT INTO patients (first_name, last_name, date_of_birth) VALUES ('Susan', 'Romero', '1934-06-16')" 
 
 Error was resolved with the solution found from stack overflow to downgrade sqlalchemy by `pip install sqlalchemy==1.4.46`
 
