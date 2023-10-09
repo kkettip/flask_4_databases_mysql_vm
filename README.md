@@ -72,5 +72,16 @@ In MySQL Workbench
 **Database Schema**
 
 Database name: all_patients
+
 Tables: patients, conditions and patients_conditions
+
+The relationship type is many to many because one patient can be associated with many types of conditions. The junction table is `conditions` table. The junction table has a one to many relationship with the `patients` table and a one to many realtionship with the `patients_conditions` table.
+
+**Steps and challenges**
+
+Error enountered include: ObjectNotExecutableError: Not an executable object: "INSERT INTO patients (first_name, last_name, date_of_birth) VALUES ('Susan', 'Romero', '1934-06-16')"
+
+Error was resolved with the solution found from stack overflow to downgrade sqlalchemy by `pip install sqlalchemy==1.4.46`
+
+
 
