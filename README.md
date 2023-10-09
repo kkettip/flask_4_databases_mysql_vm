@@ -55,8 +55,8 @@ In Cloud Shell
 6. Input `sudo mysql` to log into MySQL
 7. To create a new user and grant privileges to the user: Input `CREATE USER ‘user'@'%' IDENTIFIED BY ‘password’;` and `GRANT ALL PRIVILEGES ON *.* TO ‘user'@'%’ WITH GRANT OPTION;`
 8. Exit MySQL.
-9. To edit the MySQL configuration fileInput and change the bind-address to 0.0.0.0. 
-10. Input: `sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf` 
+9. To edit the MySQL configuration file and change the bind-address to 0.0.0.0. 
+10. Input: `sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf` and change the bind-address to 0.0.0.0.
 11. Save the file and exit.
 12. To restart: Input: `sudo service mysql restart`
 
