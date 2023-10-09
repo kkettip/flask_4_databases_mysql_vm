@@ -75,7 +75,7 @@ Database name: all_patients
 
 Tables: patients, conditions and patient_conditions
 
-The relationship type is many to many because one patient can be associated with many types of conditions. The junction table is `conditions` table. The junction table has a one to many relationship with the `patient_conditions` table. The patients and conditions table has a one to many relationship with patient_conditions table. The junction table allows one to manage the relationships between the patients and conditions table.
+The relationship type is many to many because one patient can be associated with many types of conditions. The junction table is the conditions table. The junction table has a one to many relationship with the patient_conditions table. The patients and conditions table has a one to many relationship with patient_conditions table. The junction table allows one to manage the relationships between the patients and conditions table.
 
 **Steps and challenges**
 
